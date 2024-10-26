@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Barlow semi-condensed';
-    src: url(./fonts/BarlowSemiCondensed-Medium.woff2);
+    src: url(./fonts/BarlowSemiCondensed-Medium.woff2) format('woff2');
     font-weight: 500;
 }
 @font-face {
     font-family: 'Barlow semi-condensed';
-    src: url(./fonts/BarlowSemiCondensed-SemiBold.woff2);
+    src: url(./fonts/BarlowSemiCondensed-SemiBold.woff2) format('woff2');
     font-weight: 600;
 }
 
@@ -25,4 +25,86 @@
 *::after,
 *::before{
     box-sizing: border-box;
+}
+
+html{
+    margin: 0;
+}
+
+body{
+    font-size: .8125rem;
+    color: var(--dark-blackish-blue);
+    font-family: 'Barlow semi-condensed';
+    background: var(--Light-grayish-blue);
+}
+.cards{
+    width: 90%;
+    max-width: 1100px;
+    margin: 5rem auto;
+    display: grid;
+    gap: 1.5rem;
+    position: relative;
+}
+.card{
+    background: var(--white);
+    padding: 2rem;
+    border-radius: .5rem;
+}
+.card:first-child p {
+    z-index: 3;
+    position: relative; /* to activate Z-index property */
+}
+.card:first-child::before{
+    content:url(./images/bg-pattern-quotation.svg);
+    position: absolute;
+    right: 20px;
+    top: 0;
+    z-index: 1;    
+}
+.bg-dark{
+    background: var(--dark-blackish-blue);
+    color: var(--white);
+}
+.bg-gray{
+    background: var(--dark-grayish-blue);
+    color: var(--white);
+}
+.bg-violet{
+    background: var(--primary-violet);
+    color: var(--white);
+}
+.bg-dark .card__header img{
+    border: 2px solid rgba(117, 65, 200, 0.7);
+}
+.bg-violet .card__header img{
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.card__header{
+    display: flex;
+}
+.card__header img{
+    width: 30px;
+    border-radius: 50%;
+    margin-inline-end: 1rem;
+}
+.user__description p{
+    margin: 0;
+}
+.card .user__name,
+.card .card__review-title{
+    font-weight: 600;
+}
+.card .user__graduate{
+    opacity: .5;
+}
+.card__review-title{
+    font-size: 1.525em;
+    line-height: 1.2;
+    margin-block: 0.5em;
+}
+
+.card__review{
+    line-height: 1.3;
+    margin: 0;
+    opacity: .7;
 }
